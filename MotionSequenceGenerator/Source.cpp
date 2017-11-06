@@ -1,5 +1,7 @@
 #include "Header.h"
 
+//kkllk
+
 //global settings
 ////for test
 const string BVH_ROOT_PATH = "bvh_files\\FOR_MY_TEST";
