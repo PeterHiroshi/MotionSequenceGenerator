@@ -406,7 +406,7 @@ void SaveImageList(string path, const vector<Mat>& matList)
 	/*for (int n = 0; n < matList.size(); ++n) {
 		ostringstream oss;
 		oss << "show" << n;
-		imshow(oss.str(), matList[n]);
+		imshow(oss.str(), matList[n]); 
 	}*/
 
 	int _row = matList[0].rows * 2;
