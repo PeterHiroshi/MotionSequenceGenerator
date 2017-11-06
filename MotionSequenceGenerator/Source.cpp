@@ -1,7 +1,5 @@
 #include "Header.h"
 
-//kkllk
-
 //global settings
 ////for test
 const string BVH_ROOT_PATH = "bvh_files\\FOR_MY_TEST";
@@ -402,7 +400,7 @@ Mat SaveAsImage(void)
 	return img;
 }
 
-void SaveImageList(string path, const vector<Mat>& matList)
+void SaveImageList(string path, const vector<Mat>& matList, int rowNum)
 {
 	//test here
 	/*for (int n = 0; n < matList.size(); ++n) {
@@ -411,9 +409,14 @@ void SaveImageList(string path, const vector<Mat>& matList)
 		imshow(oss.str(), matList[n]); 
 	}*/
 
-	int _row = matList[0].rows * 2;
-	int _cols = matList[0].cols * (matList.size() / 2);
+	int _row = matList[0].rows * rowNum;
+	int _cols = matList[0].cols * (matList.size() / rowNum);
 	int _type = matList[0].type();
+
+	int basic_col_num = matList.size() / rowNum;
+	int basic_dir_col_num = basic_col_num * 2;
+	int basic_dir_num = rowNum / 2;
+
 
 	//cout << "rows = " << _row << endl;
 	//cout << "cols = " << _cols << endl;
@@ -423,6 +426,7 @@ void SaveImageList(string path, const vector<Mat>& matList)
 
 	Mat tmpMat;
 	Mat imgROI;
+
 
 	/*for (unsigned int i = 0; i < matList.size(); ++i) {
 	tmpMat = matList[i];
@@ -447,6 +451,8 @@ void SaveImageList(string path, const vector<Mat>& matList)
 		tmpMat.colRange(0, tmpMat.cols).copyTo(imgROI);
 
 	}
+
+
 	
 	//imshow(path, imageList);
 

@@ -58,7 +58,7 @@ void Idle(void);
 
 //other functions
 Mat SaveAsImage(void);
-void SaveImageList(string path, const vector<Mat>& matList);
+void SaveImageList(string path, const vector<Mat>& matList, int rowNum);
 void LoadFilePathList(string rootPath, vector<string>& list);
 void LoadNextBVH();
 void PathConvert(const string& srcPath, const string& dstRoot, string& dstPath, const string& suffix);
